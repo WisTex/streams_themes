@@ -1,0 +1,150 @@
+.navbar {
+    border-top: 1px solid $font_colour;
+    border-bottom: 1px solid $font_colour;
+}
+
+#banner {
+    color: $font_colour;
+}
+
+.navbar-dark .navbar-nav .active > .nav-link, 
+.navbar-dark .navbar-nav .nav-link.active, 
+.navbar-dark .navbar-nav .nav-link.show, 
+.navbar-dark .navbar-nav .show > .nav-link {
+    color: $font_colour !important;
+    border: 1px solid $font_colour;
+    border-radius: $radius;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: $bgcolour;
+    background-color: $font_colour;
+}
+
+.usermenu.fakelink {
+    text-decoration: none !important;
+}
+
+aside {
+        width: 308px;
+        min-width: 308px;
+        max-width: 308px;
+}
+
+aside#region_1 img {
+    border: 1px solid $font_colour;
+}
+
+a, .fakelink {
+    color: $font_colour;
+    text-decoration: underline dotted;
+}
+
+a:hover, a:focus, .fakelink:hover, .fakelink:focus {
+    color: $font_colour ;
+    text-decoration: underline overline dotted;
+}
+
+.widget, .vcard, .list-group-item,
+#profile-jot-wrapper, .toplevel_item, .comment-edit-text,
+.dropdown-menu, .dropdown-divider,
+.generic-content-wrapper {
+    border: 1px solid $font_colour;
+}
+
+.btn-primary, .btn-outline-secondary, .btn-success {
+    color: $font_colour;
+    border-color: $font_colour;
+}
+
+.btn-success {
+    background-color: $bgcolour;
+}
+
+.btn-success:hover {
+    background-color: $font_colour !important;
+}
+
+.btn-primary:hover, .btn-outline-secondary:hover, 
+.btn-outline-secondary:not(:disabled):not(.disabled).active, 
+.btn-outline-secondary:not(:disabled):not(.disabled):active, 
+.show > .btn-outline-secondary.dropdown-toggle {
+    color: $bgcolour;
+    background-color: $font_colour;
+    border-color: $font_colour;
+}
+
+/* If necessaary for readability
+.btn-group-sm > .btn, .btn-sm {
+    font-size: 1rem;
+}*/
+
+a.text-dark:hover, .text-dark , .wall-item-ago, .dropdown-sub-text {
+    color: $font_colour !important;
+}
+
+.dropdown-sub-text {
+    font-family: Liberation Sans, Arial;
+}
+
+#profile-photo-wrapper {
+        width: 261px;
+        height: 261px;
+}
+
+.profile-match-wrapper {
+    border-top: 1px solid $font_colour;
+    border-left: 1px solid $font_colour;
+}
+
+.fn {
+    color: $font_colour;
+}
+
+.badge-secondary {
+    color: $bgcolour;
+    background-color: $font_colour;
+}
+
+.dropdown-menu {
+    color: $font_colour;
+    background-color: $item_colour;
+    font-size: 0.9rem;
+    border-radius: 0.25rem;
+}
+
+.dropdown-menu a {
+   text-decoration : none;
+}
+
+.list-group-item {
+    text-decoration: none;
+}
+
+.wall-item-comment-wrapper {
+    border-top: 1px solid $font_colour;
+}
+
+.section-content-tools-wrapper, .section-content-wrapper {
+    background-color: $item_colour;
+}
+
+.comment-edit-text {
+    background-color: $bgcolour;
+}
+
+.jothidden {
+    background-color: $bgcolour;
+    border-top: 1px solid $font_colour;
+}
+
+blockquote {
+    border-left: 3px solid $font_colour;
+}
+@media screen and (max-width: 992px) {
+
+        main {
+                left: -308px;
+                width: calc( 100% + 308px );
+	}
+}

@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'Liberation Mono';
+    src: url('../fonts/liberationmono-regular-webfont.woff2') format('woff2'),
+         url('../fonts/liberationmono-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+}
+
+@font-face {
+    font-family: 'Dash Digital 7';
+    src: url('../fonts/dash_digital-7-webfont.woff2') format('woff2'),
+         url('../fonts/dash_digital-7-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LL Pixel';
+    src: url('../fonts/llpixel3-webfont.woff2') format('woff2'),
+         url('../fonts/llpixel3-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+kkk
