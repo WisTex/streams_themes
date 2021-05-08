@@ -6,7 +6,7 @@
 
 /* generals */
 
-@import url("/view/theme/phosphor_monochrome/css/fonts.css");
+@import url("/view/theme/phosphor_green/css/fonts.css");
 
 html {
 	font-size: $font_size;
@@ -210,8 +210,11 @@ pre {
 	border-radius: $radius;
 }
 
-.smiley {
+.wall-item-content img.smiley {
 	border: none !important;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
 }
 
 .heart {
@@ -1269,7 +1272,7 @@ img.mail-conv-sender-photo {
 }
 
 .wall-item-content img, .section-content-tools-wrapper img {
-    border: 3px double $font_colour;
+    border: 3px double $font_colour !important;
 }
 
 .wall-item-head-new {
@@ -1541,8 +1544,8 @@ img.mail-conv-sender-photo {
 
 .section-content-warning-wrapper {
 	padding: 21px 10px;
-	color: #856404;
-	background-color: #fff3cd;
+	color: $bgcolour;
+	background-color: $font_colour;
 	border-bottom: 3px solid $comment_item_colour;
 	text-align: center;
 }
@@ -2154,7 +2157,8 @@ icons which require a more subtle approach */
 .section-content-info-wrapper, textarea, .form-control, 
 .wall-item-content img, .section-content-tools-wrapper img, 
 #superblock-settings, #superblock-settings-content,  
-.switchlabel, .onoffswitch-switch {
+.switchlabel, .onoffswitch-switch, 
+.modal-content  {
 -webkit-box-shadow: $bordblur;
    -moz-box-shadow: $bordblur;
         box-shadow: $bordblur;
@@ -2165,6 +2169,19 @@ img, .fa-minus-circle {
      filter : $imgfilter !important;
 }
 
+/* #################################################### */
+/* Extra stuff that probably needs no go somewhere else */
+/* #################################################### */
+
 #theme-version {
 	padding-bottom: 1rem;
+}
+
+.modal-content {
+	background-color: $item_colour;
+	border: 1px solid $font_colour;
+}
+
+.modal-header, .modal-footer {
+	border : none;
 }
