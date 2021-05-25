@@ -107,7 +107,7 @@ class AlterbasicConfig {
 			'$background_image' => array('alterbasic_background_image', t('Set the background image'), $arr['background_image']),	
 			'$item_colour' => array('alterbasic_item_colour', t('Set the background color of items'), $arr['item_colour']),
 			'$comment_item_colour' => array('alterbasic_comment_item_colour', t('Set the background color of comments'), $arr['comment_item_colour']),
-			'$font_size' => array('alterbasic_font_family', t('Set font-family for the entire application'), $arr['font_family'], t('Examples: Liberation Sans, Nimbus Roman')),
+			'$font_family' => array('alterbasic_font_family', t('Set font-family for the entire application'), $arr['font_family'], t('Examples: Liberation Sans, Nimbus Roman')),
 			'$font_size' => array('alterbasic_font_size', t('Set font-size for the entire application'), $arr['font_size'], t('Examples: 1rem, 100%, 16px')),
 			'$font_colour' => array('alterbasic_font_colour', t('Set font-color for posts and comments'), $arr['font_colour']),
 			'$radius' => array('alterbasic_radius', t('Set radius of corners'), $arr['radius'], t('Example: 4px')),

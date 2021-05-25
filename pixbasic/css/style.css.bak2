@@ -1,12 +1,10 @@
 /**
- * Phosphor
+ * Pixbasic
  *
  */
 
 
 /* generals */
-
-@import url("/view/theme/phosphor_green/css/fonts.css");
 
 html {
 	font-size: $font_size;
@@ -35,15 +33,13 @@ a.zrl:hover {
 }
 
 .thread-separator {
-	display:none;
 	margin-top: 0px;
 	margin-bottom: 2px;
-	border-top: 1px dotted $font_colour;
+	border-top: 1px dotted #EEE;
 }
 
 body {
 	font-size: 0.9rem;
-	font-family: $font_family ;
 	background-color: $bgcolour;
 	background-image: url('$background_image');
 	background-attachment: fixed;
@@ -53,17 +49,29 @@ body {
 }
 
 aside {
-	width: $aside_widthpx;
+/*	width: $aside_widthpx;
 	min-width: $aside_widthpx;
-	max-width: $aside_widthpx;
+	max-width: $aside_widthpx;*/
 }
 
-aside #region_1 {
+#region_1 {
 	border-right: 1px solid transparent;
+	grid-column: 2;
+	grid-row: 2;
+	padding-top: 0px;
 }
 
-aside#region_1 img {
-    border: 1px solid $font_colour;
+section {
+        border-right: 1px solid transparent;
+        grid-column: 1;
+        grid-row: 2;
+	padding-top: 0px;
+}
+
+#region_3 {
+        border-right: 1px solid transparent;
+        grid-column: 1 / 3;
+        grid-row: 1;
 }
 
 aside #left_aside_wrapper,
@@ -71,15 +79,14 @@ aside #right_aside_wrapper {
 	margin-bottom: 10px;
 }
 
-#superblock-settings, #superblock-settings-content {
-    border: 1px solid $font_colour;*/
-    padding-left: 25px;
-}
-
 main {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: $main_widthpx;
+	display: grid;
+	grid-template-columns: 1fr $aside_widthpx;
+/*	grid-gap: 10px;*/
+/*	grid-auto-rows: minmax(100px, auto);*/
 }
 
 #overlay {
@@ -118,7 +125,7 @@ h6, .h6 {
 }
 
 #banner {
-	color: $font_colour;
+	color: $banner_colour;
 	font-weight: bold;
 	white-space: nowrap;
 	overflow: hidden;
@@ -146,16 +153,14 @@ abbr {
 
 a,
 .fakelink {
-    color: $link_colour;
-    text-decoration: underline dotted;
+  color: $link_colour;
 }
 
 a:hover,
 a:focus,
 .fakelink:hover,
 .fakelink:focus {
-    color: $link_colour;
-    text-decoration: overline underline dotted;
+  color: $link_colour;
 }
 
 .fakelink,
@@ -169,7 +174,7 @@ input, optgroup, select, textarea {
 
 input[type=text], textarea {
 	resize: vertical;
-	background-color: $item_colour;
+	background-color: $comment_item_colour;
 	color: $font_colour;
 }
 
@@ -193,14 +198,8 @@ pre code {
 }
 
 code {
-	color: $bgcolour;
-	font-size: 1.2em;
-}
-
-code.inline-code {
-    background: $font_colour;
-    padding: 3px 4px 0px 4px;
-    border : 1px solid $font_colour;
+	background: #ccc;
+	color: #000;
 }
 
 pre {
@@ -208,13 +207,6 @@ pre {
 	color: #333;
 	border:1px solid #ccc;
 	border-radius: $radius;
-}
-
-.wall-item-content img.smiley {
-	border: none !important;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
 }
 
 .heart {
@@ -452,14 +444,14 @@ footer {
 .fn {
 	font-weight: bold;
 	font-size: 1rem;
-	color: $font_colour;
+	color: #444444;
 }
 
 .vcard {
 	margin-bottom: 10px;
-	padding: 15px;
-	background-color: $item_colour;
-    	border: 1px solid $font_colour;
+	padding: 0px 10px 10px 10px;
+	background-color: rgba(254,254,254,0.5);
+	border: 1px solid rgba(254,254,254,0.5);
 	border-radius: $radius;
 	word-wrap: break-word;
 }
@@ -495,8 +487,8 @@ footer {
 }
 
 #profile-photo-wrapper {
-	width: 241px;
-	height: 241px;
+	width: 251px;
+	height: 251px;
 	margin-bottom: 10px;
 	border-radius: $radius;
 }
@@ -627,8 +619,8 @@ footer {
 }
 
 .contact-block-img {
-	width:43px;
-	height:43px;
+	width:47px;
+	height:47px;
 	margin-bottom: 3px;
 }
 
@@ -649,7 +641,7 @@ footer {
 }
 
 .wall-item-conv {
-	background-color: $item_colour;
+	background-color: $comment_item_colour;
 }
 
 #nav-notifications-template,
@@ -680,7 +672,7 @@ nav .acpopup {
 }
 
 .descriptive-text {
-	color: $font_colour;
+	color: #888;
 }
 
 #plugin-settings-link, #account-settings-link {
@@ -721,7 +713,7 @@ nav .acpopup {
 }
 
 .profile-match-name {
-	width: 108px;
+	width: 120px;
 	height: 1.5em;
 	overflow: hidden !important;
 }
@@ -742,13 +734,12 @@ nav .acpopup {
 .profile-match-wrapper {
     float: left;
     width: 120px;
-    height: 150px;
-    padding: 10px 5px 10px 10px;
-    margin: 8px 3px 0 0;
-    border-top: 1px solid $font_colour;
-    border-left: 1px solid $font_colour;
+    height: 110px;
+    padding: 10px;
+    margin: 8px 10px 0 0;
+    border-top: 1px solid #eee;
+    border-left: 2px solid #eee;
 }
-
 .profile-match-ignore {
 	float: right;
 }
@@ -877,25 +868,9 @@ div.jGrowl div.jGrowl-notification {
 	white-space: nowrap;
 }
 
-.list-group-item.text-dark, .list-group-item.text-dark:hover {
-    color: $font_colour !important;
-}
-
-.list-group-item:hover {
-    text-decoration: underline dotted;
-}
-
-.text-dark, a.text-dark:hover, a.text-dark  {
-    color: $font_colour !important;
-}
-
 .notification.notification-forum {
 	font-size: 0.9rem;
 	color: $font_colour;
-}
-
-.fs {
-    background-color: $bgcolour;
 }
 
 #acl-search::-webkit-input-placeholder {
@@ -1050,7 +1025,7 @@ a .drop-icons {
 
 .drop-icons:hover,
 a .drop-icons:hover {
-	color: $item_colour;
+	color: #FF0000;
 }
 
 .lockview,
@@ -1101,8 +1076,6 @@ img.mail-conv-sender-photo {
 
 .jothidden {
 	font-weight: bold;
-	background-color: $bgcolour;
-    	border-top: 1px solid $font_colour;
 }
 
 .jothidden input::-webkit-input-placeholder {
@@ -1115,7 +1088,7 @@ img.mail-conv-sender-photo {
 
 #profile-jot-wrapper {
 	background-color: rgba(254, 254, 254, 1);
-    	border: 1px solid $font_colour;
+	border: 1px solid rgba(0, 0, 0, .2);
 	border-radius: $radius;
 
 }
@@ -1159,23 +1132,10 @@ img.mail-conv-sender-photo {
 	border-top-left-radius: $radius;
 }
 
-.toplevel-item {
-    border: 1px solid $font_colour;
-}
-
-.bg-primary {
-    background-color: $nav_bg !important;
-}
-
-.wall-item-title.text-white {
-    color: $item_colour !important;
-    background-color: $font_colour !important;
-}
-
 .wall-event-item {
 	padding: 10px;
-	color: $item_colour;
-	background-color: $font_colour; /* should reflect calendar color */
+	color: #fff;
+	background-color: #3A87AD; /* should reflect calendar color */
 	border-top-left-radius: $radius;
 	border-top-right-radius: $radius;
 }
@@ -1186,26 +1146,25 @@ img.mail-conv-sender-photo {
 	border-top-left-radius: $radius;
 }
 
-.justified-gallery {
-	background-color: $item_colour;
-}
-
 .wall-item-footer {
 	font-size: 0.75rem;
 	margin-top: 2em;
 }
 
 .wall-item-content-wrapper {
-	background-color: transparent;
+	background-color: $item_colour;
 	border-top-right-radius: $radius;
 	border-top-left-radius: $radius;
 }
 
 .wall-item-content-wrapper.comment {
-	background-color: transparent;
+	background-color: $comment_item_colour;
 	border-top-right-radius: 0px;
 	border-top-left-radius: 0px;
-	padding-bottom: 1rem;
+}
+
+.wall-item-img img {
+        width: 100%;
 }
 
 /*
@@ -1215,8 +1174,8 @@ img.mail-conv-sender-photo {
 }
 */
 .hide-comments-outer {
-	background-color: transparent;
-	border-top-color: $font_colour;
+	background-color: $comment_item_colour;
+	border-top-color: #ccc;
 	border-style: solid;
 	border-top-style: dashed;
 	border-width: 1px 0px 0px 0px;
@@ -1225,25 +1184,22 @@ img.mail-conv-sender-photo {
 }
 
 .hide-comments-outer:hover {
-	border-top: 1px dashed $font_colour;
+	border-top: 1px dashed #adadad;
 }
 
 .wall-item-comment-wrapper {
 	padding: 7px 10px;
-	background-color: transparent;
+	background-color: $item_colour;
 	border-radius: 0px;
 	border-bottom-right-radius: $radius;
 	border-bottom-left-radius: $radius;
+	border-top: 3px solid $comment_item_colour;
 }
 
 .wall-item-comment-wrapper-wc {
-/*	border-top: 0px solid $comment_item_colour;*/
+	border-top: 0px solid $comment_item_colour;
 }
 
-.fa-caret-right::before {
-    margin-left : 0.5rem;
-    content: "\2794";
-}
 
 .wall-item-photo {
 	width: $top_photo;
@@ -1258,9 +1214,9 @@ img.mail-conv-sender-photo {
 	height: $reply_photo;
 }
 
+.wall-item-ago,
 .dropdown-sub-text {
-    	font-family: Liberation Sans, Arial;
-	color: $font_colour !important;
+	color: #777;
 }
 
 .wall-item-content,
@@ -1271,80 +1227,19 @@ img.mail-conv-sender-photo {
 	font-size: 1rem;
 }
 
-.wall-item-content .wall-item-tools {
-    margin-left : 0.5rem;
-}
 
-.wall-item-content img, .section-content-tools-wrapper img {
-    border: 3px double $font_colour !important;
+.p-2 {
+	padding: 0 !important;
 }
-
-.wall-item-head-new {
-    border-top: 0.2rem solid $nav_bg;
-}
-
-.wall-item-info {
-    margin-top : 0.5rem;
-    margin-left : 0.5rem;
-}
-
-.comment .wall-item-info {
-    margin-top : 0.1rem;
-    margin-left : 0.5rem;
-}
-
-.wall-item-author {
-    margin-top : 0.5rem;
-    margin-left : 0.5rem;
-}
-
-.wall-item-ago {
-    padding-top: 0.25rem;
-    color: $font_colour;
-}
-
-.comment .wall-item-author {
-    margin-top : 0.1rem;
-    margin-left : 0.5rem;
-}
-
-.thread-wrapper {
-	background-color: $item_colour;
-}
-
-.item-highlight {
-    border-left-color: $font_colour !important;
-}
-
-.wall-item-content .e-content {
-    margin-top : 0.5rem;
-    margin-left : 0.5rem;
-    margin-right : 0.5rem;
-}
-
-.comment .wall-item-content, .comment .wall-item-content blockquote {
-    font-size : 0.9rem;
-}
-
-.wall-item-tools {
-    margin-left : 0.5rem;
-    margin-right : 0.5rem;
-}
-
-.comment .wall-item-tools {
-    margin-left : 0.5rem;
-}
-
 
 .comment-edit-text {
-    	border: 1px solid $font_colour;
+	border: 1px solid #ccc;
 	border-radius: $radius;
-    	background-color: $bgcolour;
 }
 
 .divgrow-showmore {
 	display: block;
-	border-top: 1px dashed $font_colour;
+	border-top: 1px dashed #ccc;
 	text-align: center;
 }
 
@@ -1356,53 +1251,12 @@ img.mail-conv-sender-photo {
 	background-color: $comment_item_colour;
 }
 
-.fa-thumbs-o-up.ivoted::before {
-    content: "\f164";
-}
-
-.fa-thumbs-o-down.ivoted::before {
-    content: "\f165";
-}
-
-.ivoted {
-    color: $font_colour;
-}
-
 /* widgets */
 
-.list-group-item {
-    background-color : $item_colour;
-    border: 1px solid $font_colour;
-    text-decoration: none;
-}
-
-.list-group-item.notification-link:hover {
-    background-color : $bgcolour;
-}
-
-.badge-warning, .badge-danger, .badge-secondary {
-    color: $bgcolour;
-    background-color: $font_colour;
-}
-
-.badge-warning a.text-dark {
-    color: $bgcolour !important;
-    text-decoration: none;
-}
-
 .widget {
-	background-color: $item_colour;
-    	border: 1px solid $font_colour;
+	background-color: rgba(254,254,254,.5);
+	border: 1px solid rgba(254,254,254,.5);
 	border-radius: $radius;
-	padding: 12px;
-}
-
-.widget a:hover {
-    background-color : $bgcolour;
-}
-
-.suggest-widget-more {
-    margin-top: 10px;
 }
 
 #note-text {
@@ -1476,10 +1330,6 @@ img.mail-conv-sender-photo {
 	width: 3.75rem;
 }
 
-.usermenu.fakelink {
-    text-decoration: none !important;
-}
-
 #avatar, .nav-avatar {
 	width: 2.35rem;
 	height: 2.35rem;
@@ -1503,16 +1353,17 @@ img.mail-conv-sender-photo {
 }
 
 .generic-content-wrapper {
-    	border: 1px solid $font_colour;
+	border: 1px solid rgba(0, 0, 0, .2);
 	border-radius: $radius;
 	margin-bottom: 1.5rem;
 }
 
 .section-title-wrapper {
 	padding: 7px 10px;
-	background-color: transparent;
+	background-color: $item_colour;
 	border-top-left-radius: $radius;
 	border-top-right-radius: $radius;
+	border-bottom: 3px solid $comment_item_colour;
 }
 
 .section-title-wrapper h2,
@@ -1522,7 +1373,6 @@ img.mail-conv-sender-photo {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	background-color: $bgcolour;
 }
 
 .section-subtitle-wrapper h3 {
@@ -1531,25 +1381,28 @@ img.mail-conv-sender-photo {
 
 .section-subtitle-wrapper {
 	padding: 4px 10px;
-	background-color: transparent;
+	background-color: $item_colour;
+	border-bottom: 3px solid $comment_item_colour;
 }
 
 .section-content-tools-wrapper {
 	padding: 7px 10px;
-	background-color: transparent;
+	background-color: $comment_item_colour;
+	border-bottom: 3px solid $comment_item_colour;
 }
 
 .section-content-info-wrapper {
 	padding: 21px 10px;
-	color: $bgcolour;
-	background-color: $font_colour;
+	color: #0c5460;
+	background-color: #d1ecf1;
+	border-bottom: 3px solid $comment_item_colour;
 	text-align: center;
 }
 
 .section-content-warning-wrapper {
 	padding: 21px 10px;
-	color: $bgcolour;
-	background-color: $font_colour;
+	color: #856404;
+	background-color: #fff3cd;
 	border-bottom: 3px solid $comment_item_colour;
 	text-align: center;
 }
@@ -1576,7 +1429,7 @@ img.mail-conv-sender-photo {
 
 .section-content-wrapper {
 	padding: 7px 10px;
-	background-color: transparent;
+	background-color: $comment_item_colour;
 	border-bottom-left-radius: $radius;
 	border-bottom-right-radius: $radius;
 	word-wrap: break-word;
@@ -1655,74 +1508,6 @@ main.fullscreen .section-content-wrapper-np {
 	border-radius: $radius;
 }
 
-.form-control:focus {
-    color: $font_colour;
-    background-color: $item_colour;
-    border-color: $font_colour;
-    outline: 0;
-    box-shadow: 0 0 0 .2rem rgba(250,0,0,.25);
-}
-
-.form-control::placeholder {
-    color: $font_colour;
-    opacity: 0.75;
-}
-
-.form-control {
-    border: 1px solid $font_colour;
-    color: $font_colour;
-    background-color: $item_colour;
-}
-
-.list-group-item.active {
-    z-index: 2;
-    color: $font_colour;
-    background-color: $bgcolour;
-    border-color: $font_colour;
-}
-
-.fa-filter, .fa-times, .fa-user, .fa-circle, .text-success {
-    color: $font_colour	 !important;
-}
-
-.fa-external-link, .list-group-item a {
-    color: $font_colour !important;
-}
-
-.btn-primary, .btn-outline-secondary, .btn-success {
-    color: $font_colour;
-    background-color: $bgcolour;
-    border-color: $font_colour;
-}
-
-.btn-success {
-    background-color: $bgcolour;
-}
-
-.btn-success:hover {
-    background-color: $font_colour !important;
-    color: $bgcolour;
-}
-
-.btn-primary:hover, .btn-outline-secondary:hover, 
-.btn-outline-secondary:not(:disabled):not(.disabled).active, 
-.btn-outline-secondary:not(:disabled):not(.disabled):active, 
-.show > .btn-outline-secondary.dropdown-toggle {
-    color: $bgcolour !important;
-    background-color: $font_colour;
-    border-color: $font_colour;
-}
-
-/* If necessaary for readability*/
-.btn-group-sm > .btn, .btn-sm {
-    font-size: 1rem !important;
-}
-
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-    color: $bgcolour;
-    background-color: $font_colour;
-}
-
 .rounded-top {
 	border-top-left-radius: $radius !important;
 	border-top-right-radius: $radius !important;
@@ -1731,25 +1516,15 @@ main.fullscreen .section-content-wrapper-np {
 blockquote {
 	font-size: 1rem;
 	font-style: italic;
-	border-left: 3px solid $font_colour;
+	border-left: 3px solid #ccc;
 	padding: 1em 0px 1em 1.5em;
 	margin: 0px;
 }
 
 .dropdown-menu {
 	color: $font_colour;
-	background-color: $item_colour;
 	font-size: 0.9rem;
-    	border: 1px solid $font_colour;
 	border-radius: $radius;
-}
-
-.dropdown-menu a {
-   text-decoration : none;
-}
-
-.dropdown-menu.show a:hover{
-	background-color: $bgcolour;
 }
 
 .dropdown-item {
@@ -1767,17 +1542,9 @@ blockquote {
 	background-color: $item_colour;
 }
 
-.dropdown-item:hover {
-    text-decoration: underline dotted;
-}
-
 .dropdown-item.active {
 	color: #fff;
 	background-color: #007bff;
-}
-
-.dropdown-divider {
-    	border: 1px solid $font_colour;
 }
 
 .bg-dark {
@@ -1786,22 +1553,11 @@ blockquote {
 
 .navbar {
 	z-index:1030;
-    	border-top: 1px solid $font_colour;
-    	border-bottom: 1px solid $font_colour;
 }
 
 .navbar-dark .navbar-nav .nav-link,
 .usermenu i {
 	color: $nav_icon_colour;
-}
-
-.navbar-dark .navbar-nav .active > .nav-link, 
-.navbar-dark .navbar-nav .nav-link.active, 
-.navbar-dark .navbar-nav .nav-link.show, 
-.navbar-dark .navbar-nav .show > .nav-link {
-    color: $font_colour !important;
-    border: 1px solid $font_colour;
-    border-radius: $radius;
 }
 
 .navbar-dark .navbar-nav .nav-link:focus,
@@ -1811,32 +1567,20 @@ blockquote {
 	color: $nav_active_icon_colour;
 }
 
-.nav-link:hover {
-    text-decoration: overline underline dotted;
-}
-
-.navbar-toggler {
-    color: $font_colour !important;
-}
-
-.text-muted {
-    color: $font_colour !important;
-}
-
 @media screen and (max-width: 992px) {
 
 	aside#region_1 {
-		border-right: 1px solid $nav_bd;
+		border-left: 1px solid $nav_bd;
 	}
 
-	main {
-		left: -$aside_widthpx;
-		width: calc( 100% + $aside_widthpx );
-	}
+        main {
+                left: -calc (100% + $aside_widthpx);
+                width: calc( 100% + $aside_widthpx );
+        }
 
-	main.region_1-on {
-		left: 0px;
-	}
+        main.region_1-on {
+                left: -$aside_widthpx;
+        }
 
 	#nav-app-link-wrapper {
 		min-width: 0;
@@ -1899,7 +1643,7 @@ dl.bb-dl > dd > li {
 	content:"\f069  ";
 }
 
-/* Modified original CSS to match input in Redbasic */
+/* Modified original CSS to match input in Pixbasic */
 .jothidden .bootstrap-tagsinput {
 	border: 0px solid transparent;
 	margin-bottom: 0px;
@@ -1938,7 +1682,7 @@ dl.bb-dl > dd > li {
 
 .form-group.checkbox > div label {
     display: block; overflow: hidden; cursor: pointer;
-    border: 1px solid $font_colour;
+    border: 1px solid #ccc;
     border-radius: 12px;
     margin:0px;
 	-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
@@ -1967,24 +1711,22 @@ dl.bb-dl > dd > li {
 
 .onoffswitch-inner:before {
     content: attr(data-on);
-    padding-top: 2px;
-    padding-right: 24px;
-    background-color: $font_colour;
-	color: $item_colour;
+    padding-right: 21px;
+    background-color: $item_colour;
+	color: $font_colour;
     text-align: right;
 }
 
 .onoffswitch-inner:after {
     content: attr(data-off);
-    padding-top: 2px;
-    padding-left: 24px;
-    background-color: $item_colour; color: $font_colour;
+    padding-left: 21px;
+    background-color: $item_colour; color: #ccc;
     text-align: left;
 }
 
 .onoffswitch-switch {
     display: block; width: 15px; margin:4px;
-    background: $font_colour;
+    background: #ccc;
     border-radius: 10px;
     position: absolute; top: 0; bottom: 0; right: 36px;
     -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
@@ -1997,7 +1739,7 @@ dl.bb-dl > dd > li {
 
 .form-group.checkbox > div > input:checked + label .onoffswitch-switch {
     right: 0px;
-    background-color: $bgcolour;
+    background-color: #0275d8;
 }
 
 
@@ -2048,7 +1790,7 @@ dl.bb-dl > dd > li {
 }
 
 .app-icon {
-	color: #bgcolour;
+	color: #777;
 	font-size: 80px;
 	text-shadow: 3px 3px 3px lightgrey;
 }
@@ -2122,9 +1864,9 @@ dl.bb-dl > dd > li {
 	opacity: 1;
 }
 
-/*.threadlevel.even {
+.threadlevel.even {
 	color: #888;
-} */
+} 
 
 .channel-active {
 	border: 3px solid #0275d8;
@@ -2134,58 +1876,3 @@ dl.bb-dl > dd > li {
 	margin-bottom: 10px;
 }
 
-/* Here lies the magic
-Retro look is set here*/
-
-/* Main text, buttons and icons */
-body, .btn-sm.wall-item-like, .fa.fa-fw, .btn, .form-control, textarea {
-    text-shadow: $txtblur !important;
-}
-
-/* Text, buttons and icons with reversed colours */
-.wall-item-title.text-white, .btn-primary:hover, .btn-success:hover, .btn-outline-secondary:hover, 
-.badge, .section-content-info-wrapper, .nav-link.active, .onoffswitch-inner::before {
-    text-shadow: $btnblur !important;
-}
-
-/* Additional blurry icons : some upper right notification & navigation
-icons which require a more subtle approach */
-.fa.notifications-btn-icon, .fa.fa-arrow-circle-right, .fa.fa-bars {
-    text-shadow: $subtlblur !important;
-}
-
-/* Blurry Borders */
-.navbar, .widget, .vcard, 
-.list-group-item, .badge, .generic-content-wrapper, .thread-wrapper, 
-.wall-item-like, .btn, .nav-link.active, .inline-code, 
-.section-content-info-wrapper, textarea, .form-control, 
-.wall-item-content img, .section-content-tools-wrapper img, 
-#superblock-settings, #superblock-settings-content,  
-.switchlabel, .onoffswitch-switch, 
-.modal-content  {
--webkit-box-shadow: $bordblur;
-   -moz-box-shadow: $bordblur;
-        box-shadow: $bordblur;
-}
-
-/* Images Filter - $imgfilter */
-img, .fa-minus-circle {
-     filter : $imgfilter !important;
-}
-
-/* #################################################### */
-/* Extra stuff that probably needs no go somewhere else */
-/* #################################################### */
-
-#theme-version {
-	padding-bottom: 1rem;
-}
-
-.modal-content {
-	background-color: $item_colour;
-	border: 1px solid $font_colour;
-}
-
-.modal-header, .modal-footer {
-	border : none;
-}
