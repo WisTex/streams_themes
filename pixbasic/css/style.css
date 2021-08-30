@@ -1277,6 +1277,10 @@ img.mail-conv-sender-photo {
 /*    margin-left: 0.5rem;*/
 }
 
+.wall-item-lock {
+    margin-left: 0.5rem;
+}
+
 .clean-btn {
     border: none !important;
     background-color: transparent;
@@ -1295,7 +1299,7 @@ img.mail-conv-sender-photo {
 }
 
 .wall-item-ago {
-    padding-top: 0.25rem;
+    padding-top: 1rem;
     padding-right: 1.5rem;
     float : right;
     font-size: 0.875rem;
