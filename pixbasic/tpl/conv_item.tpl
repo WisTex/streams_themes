@@ -200,12 +200,12 @@
 						{{/if}}
 						<div class="btn-group">
 							{{if $item.like}}
-							<button type="button" title="{{$item.like.0}}" class="clean-btn like" onclick="dolike({{$item.id}},'like'); return false;">
+							<button type="button" title="{{if $item.my_responses.like}}{{$item.like.1}}{{else}}{{$item.like.0}}{{/if}}" class="clean-btn like" onclick="dolike({{$item.id}},{{if $item.my_responses.like}} 'Undo/' + {{/if}} 'Like' ); return false;">
 								<i class="fa fa-fw {{if !$item.my_responses.like}}fa-heart-o{{else}}fa-heart ivoted{{/if}}" ></i>
 							</button>
 							{{/if}}
 							{{if $item.dislike}}
-							<button type="button" title="{{$item.dislike.0}}" class="clean-btn dislike" onclick="dolike({{$item.id}},'dislike'); return false;">
+							<button type="button" title="{{if $item.my_responses.dislike}}{{$item.dislike.1}}{{else}}{{$item.dislike.0}}{{/if}}" class="clean-btn dislike" onclick="dolike({{$item.id}},{{if $item.my_responses.dislike}} 'Undo/' + {{/if}} 'Dislike'); return false;">
 								<i class="fa fa-fw {{if !$item.my_responses.dislike}}fa-thumbs-o-down{{else}}fa-thumbs-down ivoted{{/if}}" ></i>
 							</button>
 							{{/if}}
