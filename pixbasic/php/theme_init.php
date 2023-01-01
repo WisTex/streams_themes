@@ -1,5 +1,7 @@
 <?php
 
+use Code\Lib\Head;
+
 head_add_css('/vendor/forkawesome/fork-awesome/css/fork-awesome.min.css');
 head_add_css('/vendor/twbs/bootstrap/dist/css/bootstrap.min.css');
 head_add_css('/library/bootstrap-tagsinput/bootstrap-tagsinput.css');

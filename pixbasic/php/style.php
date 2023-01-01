@@ -1,5 +1,7 @@
 <?php
 
+use Code\Lib\Channel;
+
 if(! App::$install) {
 
 	// Get the UID of the channel owner

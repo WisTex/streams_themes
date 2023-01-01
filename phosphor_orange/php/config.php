@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Zotlabs\Theme;
+namespace Code\Theme;
 
 class Phosphor_orangeConfig {
 
