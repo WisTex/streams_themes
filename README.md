@@ -1,1 +1,1 @@
-Zap themes repository
+Streams themes repository
