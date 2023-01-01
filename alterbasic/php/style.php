@@ -5,7 +5,7 @@ use Code\Lib\Channel;
 if(! App::$install) {
 
 	// Get the UID of the channel owner
-	$uid = get_theme_uid();
+	$uid = Channel::get_theme_uid();
 
 	if($uid) {
 		load_pconfig($uid,'alterbasic');

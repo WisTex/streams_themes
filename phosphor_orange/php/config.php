@@ -1,5 +1,10 @@
 <?php
 
+use App;
+use Code\Lib\Features;
+use Code\Render\Theme;
+
+
 
 namespace Code\Theme;
 

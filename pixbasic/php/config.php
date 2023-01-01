@@ -2,6 +2,11 @@
 
 namespace Code\Theme;
 
+use App;
+use Code\Lib\Features;
+use Code\Render\Theme;
+
+
 class PixbasicConfig {
 
 	function get_schemas() {
